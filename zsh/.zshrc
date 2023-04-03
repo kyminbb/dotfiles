@@ -11,6 +11,9 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 plugins=(git macos zsh-autosuggestions zsh-syntax-highlighting history jsontools)
 source $ZSH/oh-my-zsh.sh
 
+# Start Docker
+colima start
+
 # Init pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
