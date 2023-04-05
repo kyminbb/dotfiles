@@ -12,7 +12,10 @@ plugins=(git macos zsh-autosuggestions zsh-syntax-highlighting history jsontools
 source $ZSH/oh-my-zsh.sh
 
 # Start Docker
-colima start
+colima status &> /dev/null
+if [[ $? -eq 1 ]]; then
+  colima start
+fi 
 
 # Init pyenv
 export PYENV_ROOT="$HOME/.pyenv"
