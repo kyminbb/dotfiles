@@ -1,0 +1,273 @@
+format = """
+$directory\
+([](white)$git_branch$git_status)\
+$fill\
+$kubernetes\
+$docker_context\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$package\
+$buf\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$crystal\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$character\
+"""
+
+[aws]
+format = "[ $symbol( $profile)( \\($region\\))]($style)"
+symbol = "󰸏"
+
+[buf]
+format = "[ $symbol( $version)]($style)"
+symbol = ""
+
+[c]
+format = "[ $symbol( $version)]($style)"
+symbol = ""
+
+[character]
+success_symbol = "[➜](bold green) "
+error_symbol = "[✗](bold red) "
+
+[cmd_duration]
+show_milliseconds = true
+format = "[ \\($duration\\)]($style)"
+style = "bright-white"
+
+[conda]
+format = "[ $symbol( $environment)]($style)"
+symbol = ""
+
+[dart]
+format = "[ $symbol( $version)]($style)"
+symbol = ""
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+format = "[$read_only]($read_only_style)[$path ]($style)"
+style = "#FF9288"
+read_only = " "
+read_only_style = "#FF9288"
+
+[docker_context]
+format = "[ $symbol( $context)]($style)"
+symbol = ""
+
+[elixir]
+format = "[ $symbol( $version)]($style)"
+symbol = ""
+
+[elm]
+format = "[ $symbol( $version)]($style)"
+symbol = ""
+
+[fill]
+symbol = " "
+
+[git_branch]
+format = "[ $symbol $branch]($style)"
+symbol = ""
+style = "#FFFEC3"
+
+[git_status]
+format = "[ $conflicted$stashed$staged$deleted$untracked$ahead_behind]($style)"
+conflicted = "=${count} "
+ahead = "⇡${count} "
+behind = "⇣${count} "
+diverged = "⇡${ahead_count}⇣${behind_count} "
+untracked = "?${count} "
+stashed = "*${count} "
+modified = "!${count} "
+staged = "+${count} "
+renamed = "»${count} "
+deleted = "✘${count} "
+style = "#82C8E2"
+
+[golang]
+format = "[ $symbol( $version)]($style)"
+symbol = ""
+
+[guix_shell]
+format = "[ $symbol]($style)"
+symbol = ""
+
+[haskell]
+format = "[ $symbol( $version)]($style)"
+symbol = ""
+
+[haxe]
+format = "[ $symbol( $version)]($style)"
+symbol = "⌘"
+
+[hostname]
+ssh_only = true
+ssh_symbol = ""
+format = "[ $ssh_symbol( $hostname)]($style)"
+
+[java]
+format = "[ $symbol( $version)]($style)"
+symbol = ""
+
+[julia]
+format = "[ $symbol( $version)]($style)"
+symbol = ""
+
+[kotlin]
+format = "[ $symbol( $version)]($style)"
+symbol = ""
+
+[lua]
+format = "[ $symbol( $version)]($style)"
+symbol = ""
+
+[memory_usage]
+format = "[ $symbol( $ram)]($style)"
+symbol = ""
+disabled = true
+
+[meson]
+format = "[ $symbol( $project)]($style)"
+symbol = "喝 "
+
+[nim]
+format = "[ $symbol( $version)]($style)"
+symbol = ""
+
+[nix_shell]
+format = "[ $symbol( $state)( \\($name\\))]($style)"
+symbol = ""
+
+[nodejs]
+format = "[ $symbol( $version)]($style)"
+symbol = ""
+
+[os]
+disabled = true
+
+[os.symbols]
+Alpaquita = ""
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = ""
+Artix = ""
+CentOS = ""
+Debian = ""
+DragonFly = ""
+Emscripten = ""
+EndeavourOS = ""
+Fedora = ""
+FreeBSD = ""
+Garuda = "﯑"
+Gentoo = ""
+HardenedBSD = "ﲊ"
+Illumos = ""
+Linux = ""
+Mabox = ""
+Macos = ""
+Manjaro = ""
+Mariner = ""
+MidnightBSD = ""
+Mint = ""
+NetBSD = ""
+NixOS = ""
+OpenBSD = ""
+openSUSE = ""
+OracleLinux = ""
+Pop = ""
+Raspbian = ""
+Redhat = ""
+RedHatEnterprise = ""
+Redox = ""
+Solus = "ﴱ"
+SUSE = ""
+Ubuntu = ""
+Unknown = ""
+Windows = ""
+
+[package]
+format = "[ $symbol( $version)]($style)"
+symbol = ""
+
+[pijul_channel]
+symbol = "🪺"
+
+[python]
+format = "[ $symbol( $version)( \\($virtualenv\\))]($style)"
+symbol = ""
+
+[rlang]
+format = "[ $symbol( $version)]($style)"
+symbol = "ﳒ"
+
+[ruby]
+format = "[ $symbol( $version)]($style)"
+symbol = ""
+
+[rust]
+format = "[ $symbol( $version)]($style)"
+symbol = ""
+
+[scala]
+format = "[ $symbol( $version)]($style)"
+symbol = ""
+
+[swift]
+format = "[ $symbol( $version)]($style)"
+symbol = ""
+
+[terraform]
+format = "[ $symbol( $version)]($style)"
+symbol = ""
