@@ -247,6 +247,7 @@ symbol = "🪺"
 [python]
 format = "[ $symbol( $version)( \\($virtualenv\\))]($style)"
 symbol = ""
+style = "bold cyan"
 
 [rlang]
 format = "[ $symbol( $version)]($style)"

@@ -12,6 +12,9 @@ zstyle ':omz:update' mode auto  # update automatically without asking
 plugins=(git history macos zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
+# alacritty config
+fpath+=${ZDOTDIR:-~}/.zsh_functions
+
 # Start Docker
 colima start &>/dev/null
 
@@ -28,6 +31,9 @@ export PIPENV_VENV_IN_PROJECT=1
 
 # Go tool config
 export PATH="$PATH:$HOME/go/bin"
+
+# Cargo config
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # Custom aliases
 
