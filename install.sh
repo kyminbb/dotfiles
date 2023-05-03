@@ -24,6 +24,7 @@ init_zsh() {
   # Init Starship
   echo "Initializing starship..."
   brew_install starship
+  brew tap homebrew/cask-fonts && brew_install font-lilex-nerd-font
   cp zsh/starship.toml ~/.config/starship.toml
   echo -e "DONE!\n"
 
