@@ -38,5 +38,5 @@ alias ls="exa -FgH"
 
 # Start tmux if not in VSCode
 if [[ "$TERM_PROGRAM" != "vscode" ]] && command -v tmux &>/dev/null && [ -z "$TMUX" ]; then
-    tmux attach -t default || tmux new -s default
+  tmux attach -t default || tmux new -s default
 fi

@@ -5,7 +5,7 @@ brew_install() {
 }
 
 init_utils() {
-  declare -ar formulae=(exa colima)
+  declare -ar formulae=(exa colima tmux)
   echo "Initializing utils [${formulae[*]}]..."
   for formula in "${formulae[@]}"; do
     brew_install "$formula"
@@ -50,3 +50,4 @@ init_zsh() {
 
 init_utils
 init_zsh
+echo "Run \`source ~/.zshrc\` to apply changes!"
