@@ -11,11 +11,11 @@ prompt() {
 }
 
 brew_install() {
-  brew list "$1" >/dev/null || brew install "$1"
+  brew list "$1" >/dev/null || brew install "$2" "$1"
 }
 
 init_utils() {
-  declare -ar formulae=(exa colima tmux)
+  declare -ar formulae=(exa colima)
   for formula in "${formulae[@]}"; do
     prompt "Installing ${BOLD_GREEN}${formula}"
     brew_install "$formula"
@@ -35,23 +35,22 @@ init_zsh() {
   # Init starship
   prompt "Installing ${BOLD_GREEN}starship"
   brew_install starship
-  prompt "Installing font-lilex-nerd-font" "$BLUE"
-  brew tap homebrew/cask-fonts && brew_install font-lilex-nerd-font
-  cp zsh/starship.toml ~/.config/starship.toml
+  prompt "Installing font-caskaydia-cove-nerd-font" "$BLUE"
+  brew tap homebrew/cask-fonts && brew_install font-caskaydia-cove-nerd-font
+  cp zsh/starship.toml "$HOME"/.config/starship.toml
 
-  # Init alacritty
-  prompt "Installing ${BOLD_GREEN}alacritty"
-  brew_install alacritty
-  [[ -z $(infocmp alacritty >/dev/null 2>&1) ]] || sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
-  cp -R alacritty ~/.config
+  # Init warp
+  prompt "Installing ${BOLD_GREEN}warp"
+  brew_install warp --cask
+  cp -R warp/. "$HOME"/.warp
 
   # Init vim
   prompt "Initializing ${BOLD_GREEN}vim"
-  cp vim/.vimrc ~/.vimrc
+  cp vim/.vimrc "$HOME"/.vimrc
 
   # Init zsh
   prompt "Initializing ${BOLD_GREEN}zsh"
-  cp zsh/.zshrc ~/.zshrc
+  cp zsh/.zshrc "$HOME"/.zshrc
 }
 
 init_utils
