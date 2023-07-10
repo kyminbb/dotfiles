@@ -8,9 +8,6 @@ plugins=(git history macos zsh-autosuggestions zsh-syntax-highlighting)
 # shellcheck disable=SC1091
 source "$ZSH/oh-my-zsh.sh"
 
-# alacritty config
-fpath+=${ZDOTDIR:-~}/.zsh_functions
-
 # Init Starship
 eval "$(starship init zsh)"
 
@@ -35,8 +32,3 @@ export PATH="$PATH:$HOME/.cargo/bin"
 alias ls="exa -FgH"
 
 # Custom aliases
-
-# Start tmux if not in VSCode
-if [[ "$TERM_PROGRAM" != "vscode" ]] && command -v tmux &>/dev/null && [ -z "$TMUX" ]; then
-  tmux attach -t default || tmux new -s default
-fi
