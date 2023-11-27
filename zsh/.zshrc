@@ -11,9 +11,6 @@ source "$ZSH/oh-my-zsh.sh"
 # Init Starship
 eval "$(starship init zsh)"
 
-# Start Docker
-colima start &>/dev/null
-
 # Pyenv config
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PATH:$PYENV_ROOT/bin"

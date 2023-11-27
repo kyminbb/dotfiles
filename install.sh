@@ -15,7 +15,7 @@ brew_install() {
 }
 
 init_utils() {
-  declare -ar formulae=(exa colima jakehilborn/jakehilborn/displayplacer)
+  declare -ar formulae=(exa jakehilborn/jakehilborn/displayplacer)
   for formula in "${formulae[@]}"; do
     prompt "Installing ${BOLD_GREEN}${formula}"
     brew_install "$formula"
