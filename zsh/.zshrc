@@ -25,8 +25,8 @@ export PATH="$PATH:$HOME/go/bin"
 # Cargo config
 export PATH="$PATH:$HOME/.cargo/bin"
 
-# Use exa instead of ls (https://github.com/ogham/exa#command-line-options)
-alias ls="exa -FgH"
+# Use eza instead of ls (https://eza.rocks/)
+alias ls="eza -F"
 
 # Display rotation
 rotate_screen() {
