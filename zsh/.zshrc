@@ -28,14 +28,4 @@ export PATH="$PATH:$HOME/.cargo/bin"
 # Use eza instead of ls (https://eza.rocks/)
 alias ls="eza -F"
 
-# Display rotation
-rotate_screen() {
-  local -r degree="$1"
-  displayplacer "id:795A34FA-BB0F-4BEF-BC01-DA777CE713A6 degree:$degree" &>/dev/null
-  return 0
-}
-
-alias hscreen="rotate_screen 0"
-alias vscreen="rotate_screen 270"
-
 # Custom aliases
