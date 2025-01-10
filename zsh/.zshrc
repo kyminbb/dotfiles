@@ -25,7 +25,7 @@ export PATH="$PATH:$HOME/go/bin"
 # Cargo config
 export PATH="$PATH:$HOME/.cargo/bin"
 
-# Use eza instead of ls (https://eza.rocks/)
-alias ls="eza -F"
+# Use eza instead of ls (https://github.com/eza-community/eza?tab=readme-ov-file#command-line-options)
+alias ls="eza -l --color=auto --icons=auto --hyperlink --absolute=off"
 
 # Custom aliases
