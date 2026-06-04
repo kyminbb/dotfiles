@@ -27,6 +27,18 @@ install_utils() {
   done
 }
 
+install_nvim() {
+  prompt "Installing ${BOLD_GREEN}neovim"
+  brew_install neovim
+  git config --global core.editor "nvim -f"
+}
+
+install_ghostty() {
+  prompt "Installing ${BOLD_GREEN}Ghostty"
+  brew_install --cask ghostty
+  cp ghostty/config "$HOME"/Library/Application\ Support/com.mitchellh.ghostty/config
+}
+
 init_zsh() {
   # Init oh-my-zsh
   prompt "Installing ${BOLD_GREEN}oh-my-zsh"
@@ -53,13 +65,10 @@ init_zsh() {
   # Init zsh
   prompt "Initializing ${BOLD_GREEN}zsh"
   cp zsh/.zshrc "$HOME"/.zshrc
-
-  # Ghostty
-  prompt "Installing ${BOLD_GREEN}Ghostty"
-  brew_install --cask ghostty
-  cp ghostty/config "$HOME"/Library/Application\ Support/com.mitchellh.ghostty/config
 }
 
 install_utils
+install_nvim
+install_ghostty
 init_zsh
 echo -e "\nRun \`source ~/.zshrc\` to apply changes!"
