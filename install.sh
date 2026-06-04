@@ -20,7 +20,7 @@ brew_install() {
 }
 
 install_utils() {
-  declare -ar formulae=(eza)
+  declare -ar formulae=(eza zsh-syntax-highlighting)
   for formula in "${formulae[@]}"; do
     prompt "Installing ${BOLD_GREEN}${formula}"
     brew_install "$formula"

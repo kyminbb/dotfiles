@@ -1,11 +1,7 @@
-#!/bin/bash
-
 # oh-my-zsh config
 export ZSH="$HOME/.oh-my-zsh"
 zstyle ':omz:update' mode auto # update automatically without asking
-# shellcheck disable=SC2034
 plugins=(git history macos zsh-autosuggestions zsh-syntax-highlighting)
-# shellcheck disable=SC1091
 source "$ZSH/oh-my-zsh.sh"
 
 # Init Starship
