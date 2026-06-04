@@ -14,5 +14,4 @@ It installs the following:
   - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like autosuggestions for zsh
   - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) - Fish-like syntax highlighting for zsh
 - [starship](https://starship.rs/) - Customizable cross-shell prompt
-  - [CaskaydiaCove Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CascadiaCode) - Font for starship
-- [warp](https://www.warp.dev/) - Modern Rust based GPU-accelerated terminal
+- [ghostty](https://ghostty.org/) - Modern GPU-accelerated terminal

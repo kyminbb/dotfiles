@@ -53,6 +53,11 @@ init_zsh() {
   # Init zsh
   prompt "Initializing ${BOLD_GREEN}zsh"
   cp zsh/.zshrc "$HOME"/.zshrc
+
+  # Ghostty
+  prompt "Installing ${BOLD_GREEN}Ghostty"
+  brew_install --cask ghostty
+  cp ghostty/config "$HOME"/Library/Application\ Support/com.mitchellh.ghostty/config
 }
 
 install_utils
