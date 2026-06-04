@@ -11,10 +11,15 @@ prompt() {
 }
 
 brew_install() {
-  brew list "$1" >/dev/null || brew install "$2" "$1"
+  local flags=()
+  while [[ "$1" == -* ]]; do
+    flags+=("$1")
+    shift
+  done
+  brew list "$1" >/dev/null || brew install "${flags[@]}" "$1"
 }
 
-init_utils() {
+install_utils() {
   declare -ar formulae=(eza)
   for formula in "${formulae[@]}"; do
     prompt "Installing ${BOLD_GREEN}${formula}"
@@ -33,16 +38,11 @@ init_zsh() {
   brew_install zsh-syntax-highlighting
 
   # Init starship
+  prompt "Installing font-rec-mono-nerd-font" "$BLUE"
+  brew_install --cask font-recursive-mono-nerd-font
   prompt "Installing ${BOLD_GREEN}starship"
   brew_install starship
-  prompt "Installing font-caskaydia-cove-nerd-font" "$BLUE"
-  brew tap homebrew/cask-fonts && brew_install font-caskaydia-cove-nerd-font
   cp zsh/starship.toml "$HOME"/.config/starship.toml
-
-  # Init warp
-  prompt "Installing ${BOLD_GREEN}warp"
-  brew_install warp --cask
-  cp -R warp/. "$HOME"/.warp
 
   # Init vim
   prompt "Initializing ${BOLD_GREEN}vim"
@@ -53,6 +53,6 @@ init_zsh() {
   cp zsh/.zshrc "$HOME"/.zshrc
 }
 
-init_utils
+install_utils
 init_zsh
 echo -e "\nRun \`source ~/.zshrc\` to apply changes!"
