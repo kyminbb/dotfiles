@@ -42,6 +42,7 @@ init_zsh() {
   brew_install --cask font-recursive-mono-nerd-font
   prompt "Installing ${BOLD_GREEN}starship"
   brew_install starship
+  mkdir -p "$HOME"/.config
   cp zsh/starship.toml "$HOME"/.config/starship.toml
 
   # Init vim
