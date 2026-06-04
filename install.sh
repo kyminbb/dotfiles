@@ -58,10 +58,6 @@ init_zsh() {
   mkdir -p "$HOME"/.config
   cp zsh/starship.toml "$HOME"/.config/starship.toml
 
-  # Init vim
-  prompt "Initializing ${BOLD_GREEN}vim"
-  cp vim/.vimrc "$HOME"/.vimrc
-
   # Init zsh
   prompt "Initializing ${BOLD_GREEN}zsh"
   cp zsh/.zshrc "$HOME"/.zshrc
