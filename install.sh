@@ -20,7 +20,7 @@ brew_install() {
 }
 
 install_utils() {
-  declare -ar formulae=(eza zsh-syntax-highlighting)
+  declare -ar formulae=(eza)
   for formula in "${formulae[@]}"; do
     prompt "Installing ${BOLD_GREEN}${formula}"
     brew_install "$formula"
@@ -35,7 +35,8 @@ init_zsh() {
   local target_path="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
   [[ -d $target_path ]] || git clone https://github.com/zsh-users/zsh-autosuggestions "$target_path"
   prompt "Installing zsh-syntax-highlighting" "$BLUE"
-  brew_install zsh-syntax-highlighting
+  target_path="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+  [[ -d $target_path ]] || git clone https://github.com/zsh-users/zsh-syntax-highlighting "$target_path"
 
   # Init starship
   prompt "Installing font-rec-mono-nerd-font" "$BLUE"
